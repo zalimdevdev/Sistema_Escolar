@@ -1,0 +1,66 @@
+@model IEnumerable<Sis_Escolar.Models.Grado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="card" >
+  <div class="card-header">
+<h1>Grados</h1>
+</div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+    </li>
+
+
+    <li class="list-group-item">
+<form asp-asp-controller="Grados" asp-action="Index">
+<p>
+    Buscar <input type="text" name="Buscar" class="form-text" />
+    <input type="submit" value="Buscar" class="btn btn-sm btn-dark" >
+</p>
+
+</form>
+    </li>
+
+
+  <li class="list-group-item">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Grado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesor_Guia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Grado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profesor_Guia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+  <li class="list-group-item">
+</div>

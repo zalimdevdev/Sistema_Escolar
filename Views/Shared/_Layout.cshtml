@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sis_Escolar</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Sis_Escolar.styles.css" asp-append-version="true" />
+</head>
+<body style="background-color: #ECF2FF;">
+    <header>
+
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3" style="background-color: #655DBB;">
+            <div class="container-fluid">
+                 <button class="btn btn-pill" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">  <span class="navbar-toggler-icon"></span></button>
+            
+
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sistema de gestion escolar</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                       
+                       
+                    </ul>
+                </div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="background-color: #655DBB;">
+<img <img width="40" height="40" src="~/images/bell.png" >
+  </button>
+  <ul class="dropdown-menu dropdown-menu-lg-end">
+    <li><button class="dropdown-item" type="button">Action</button></li>
+    <li><button class="dropdown-item" type="button">Another action</button></li>
+    <li><button class="dropdown-item" type="button">Something else here</button></li>
+  </ul>
+</div>
+
+
+<div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style="background-color: #655DBB;">
+<img <img width="40" height="40" src="~/images/Conficon.png" >
+  </button>
+  <ul class="dropdown-menu dropdown-menu-lg-end">
+    <li><button class="dropdown-item" type="button">Action</button></li>
+    <li><button class="dropdown-item" type="button">Another action</button></li>
+    <li><button class="dropdown-item" type="button">Something else here</button></li>
+  </ul>
+</div>
+
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Administrador</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+                         <br>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Estudiante" asp-action="Index">Estudiantes</a>
+                    
+                    <br>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Grado" asp-action="Index">Grados</a>
+                        
+                        <br>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Calificacion" asp-action="Index">Calificaciones</a>
+
+                                         <br>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tutor" asp-action="Index">Tutores</a>        
+                    
+
+  </div>
+</div>
+
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Sistema de Gestion escolar <!-- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> -->
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
